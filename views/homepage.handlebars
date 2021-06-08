@@ -1,0 +1,48 @@
+<!-- Loop over each object in the blogs array -->
+
+<div class="col-4 text-center">
+  <a class="blog-header-logo text-dark" href="/">Tech Blog</a>
+</div>
+{{!-- #each blogs as |blog|  --}}
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <h2 class="mb-0">
+            <a class="text-dark" href="/blog">Why MVC Is So Important</a>
+          </h2>
+            <a class="mb-1 text-muted" href="/blog">Date Created</a>
+            <p class="card-text mb-auto">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure"
+            </p>
+        </div>     
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <h2 class="mb-0">
+            <a class="text-dark" href="/blog">Authentication vs Authorization</a>
+          </h2>
+            <a class="mb-1 text-muted" href="/blog">Date Created</a>
+            <p class="card-text mb-auto">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <h2 class="mb-0">
+            <a class="text-dark" href="/blog">Object-Relational Mapping</a>
+          </h2>
+            <a class="mb-1 text-muted" href="/blog">Date Created</a>
+            <p class="card-text mb-auto">
+                "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+            </p>
+        </div>
+      </div>
+    </div>
+ {{!-- /each --}}
