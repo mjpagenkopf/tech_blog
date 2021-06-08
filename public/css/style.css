@@ -1,73 +1,10 @@
-:root {
-  --primary: #ccdad1;
-  --secondary: #9caea9;
-  --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: #38302e;
-  --border-radius: .3rem;
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  margin: 0;
-  color: var(--dark);
-  line-height: 1.25;
-}
-
-main {
-  margin: 20px auto;
-  width: 94%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--primary);
-  margin: 0;
-  padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
-  color: var(--dark);
-  line-height: 1.5;
-  font-size: 16px;
-}
-
-.hero p {
-  max-width: 75%;
-}
-
-.app-title {
-  font-size: 3rem;
-  background-color: var(--primary);
-  color: var(--dark);
-  padding: 0 10px;
-  display: inline-block;
-  border-radius: var(--border-radius);
-  box-shadow: 6px 5px var(--light-dark);
-}
-
-.list-group {
-  padding: 0;
-  list-style: none;
-}
-
-.list-item {
-  margin-bottom: 10px;
-  padding: 1.5%;
-  border-radius: var(--border-radius);
-  background-color: var(--light-dark);
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.list-item:hover {
-  background-color: var(--dark);
+header, .blog:not(:last-child) {
+  border-bottom: 1px solid #ccc;
 }
 
 /* CARDS */
@@ -155,12 +92,6 @@ li button {
   line-height: 1.5;
 }
 
-
-
-header, .blog:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
-
 .no-button {
   background: none;
   border: none;
@@ -176,11 +107,11 @@ header, .blog:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
+/* .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-}
+} */
 
 .column {
   padding-bottom: 2;
