@@ -1,66 +1,61 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4 card">
-  <div class="col-md-6 card-header">
-    <h3>Create a New Blog:</h3>
-
-    <form class="list-group card-body">
-      <div class="form-group">
-        <label for="blog-name">blog name:</label>
-        <input class="form-input" type="text" id="blog-name" name="blog-name" />
-      </div>
-      <div class="list-group">
-        <label for="blog-desc">description:</label>
-        <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
-      </div>
-      <div class="list-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if blogs.length}}
-  <div class="col-md-6 card">
-    <h3>Current blogs:</h3>
-
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
+<!-- Dashboard Page -->
+{{#if logged_in}}
+  <div class="blog-header py-3">
+    <div class="col-4 text-center">
+      <h2>
+        <a class="blog-header-logo text-dark">Start blogging, {{name}}!</a>
+      </h2>
     </div>
-    {{/each}}
+  </div>
+
+<div>
+  <div class="row mx-auto card">
+    <div class="col-md-12 card-header">
+      <h3>Write a New Blog Post:</h3>
+
+      <form class="form new-blog-form">
+        <div class="form-group">
+          <label for="blog-name">blog name:</label>
+          <input class="form-input" type="text" id="blog-name" name="blog-name" />
+        </div>
+        <div class="list-group">
+          <label for="blog-desc">description:</label>
+          <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+        </div>
+        <div class="list-group">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- These are blogs specifically related to user. Not like homepage, where it just loops through blog/1, blog/2, blog/3, etc... -->
+  {{#if blogs.length}}
+  <div class="row mx-auto card">
+    <div class="col-md-12 blog-list">
+      <h3>Current Blogs:</h3>
+      {{#each blogs as |blog|}}
+      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="row-md-6 px-0">
+            <h2 class="mb-0 display-4 font-italic">
+            <a href="/blog/{{blog.id}}">{{blog.name}}</a>
+            </h2>
+            <p class="lead my-3">
+                {{blog.description}}
+            </p>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+            </div>
+        </div>
+      </div>
+        
+      {{/each}}
+    </div>
   </div>
   {{/if}}
 </div>
 
+
 <script src="./js/dashboard.js"></script>
+{{/if}}
 
 
-
-
-
-
-
-
-{{!-- <div class="text-center">
-  <h2>name</h2>
-  <p>get_emoji</p>
-  <p>description</p>
-  <p>Created by user.name on date_created</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount"></span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Blog!</button>
-  </p>
-</div> --}}

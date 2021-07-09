@@ -1,14 +1,17 @@
 [
   {
     "name": "Why MVC is so important",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure",
+    "user_id": 1
   },
   {
     "name": "Authentication vs Authorization",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "user_id": 2
   },
   {
     "name": "Object-Relational Mapping",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "user_id": 3
   }
 ]

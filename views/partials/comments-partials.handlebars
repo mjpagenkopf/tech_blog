@@ -1,0 +1,15 @@
+<!-- comments partial page -->      
+{{#if comments}}
+    {{#each comments as |comment| }}
+      <div class="col-md-6 comment-list">
+        <a class="display-4 font-italic" href="blog/{{blog.id}}/{{comment.id}}"></a>
+        <p style="height:100px" class="lead my-3 border border-primary rounded bg-light h-100">{{comment.user_post}}<span class="d-flex flex-row-reverse">
+        <button type="click" class="btn-close float-lg-right" data-id="{{comment.id}}"></button></span></p>
+      </div>
+    {{/each}}
+  {{else}}
+  <p class="lead my-3">
+  <h3>No comments!</h3>
+  </p>
+{{/if}}
+

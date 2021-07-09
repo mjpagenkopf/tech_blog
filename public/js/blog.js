@@ -1,46 +1,51 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
+//CREATE COMMENT MODAL
+const newCommentHandler = async (event) => { 
+    event.preventDefault();
+  
+    const user_post = document.querySelector(`input[name="comment-desc"]`).value.trim();
+    const blog_id = window.location.toString().split('/') [
+        window.location.toString().split('/').length - 1
+    ];
 
-  const name = document.querySelector('#blog-name').value.trim();
-  const description = document.querySelector('#blog-desc').value.trim();
-
-  if (name && description) {
-    const response = await fetch(`/api/blog`, {
-      method: 'POST',
-      body: JSON.stringify({ name, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
+    if (user_post) {
+    const response = await fetch(`/api/comments`, {
+        method: 'POST',
+        body: JSON.stringify({
+            user_post,
+            blog_id
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
     if (response.ok) {
-      document.location.replace('/dashboard');
+        document.location.reload();
     } else {
-      alert('Failed to create blog');
+        alert(response.statusText);
+        document.querySelector('#myModal')
+        .style.display = 'block';
     }
-  }
-};
+}}
+document.querySelector('.new-comment-form').addEventListener('submit', newCommentHandler);
 
+//DELETE COMMENT BUTTON
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/blog/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to delete blog');
-    }
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/comments/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert('Failed to delete comment');
+      }
+    };
+  };
+  
+  var del = document.querySelector('.comment-list');
+  if (del) {
+    del.addEventListener('click', delButtonHandler);
   }
-};
-
-document
-  .querySelector('.new-blog-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('.blog-list')
-  .addEventListener('click', delButtonHandler);

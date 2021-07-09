@@ -1,27 +1,47 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>{{name}}!</h2>
-  </div>
-</div>
-
-
-
-  {{#if blogs.length}}
-  <div class="col-md-6 blog-list">
-    <h3>Current blogs:</h3>
-
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+<!-- Blog page -->
+<div role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        <div class="blog-post">
+          <h2 class="blog-post-title">{{name}}</h2>
+          <p class="blog-post-meta">Written by {{user.name}} on {{format_date createdAt}}</p>
+          <p>
+            {{description}}
+          </p>
+        </div>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
 
-<script src="./js/blog.js"></script>
+<!-- Comment Modal Button - Must be logged in -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> 
+        Leave Comment
+      </button>
+<!-- Comment Modal -->
+{{#if logged_in}}
+  <form class="modal fade new-comment-form" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Leave a Comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button> 
+        </div>
+          <input type="text" class="modal-body form-input" id="comment-desc" name="comment-desc">
+          </input>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">
+            Post
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+{{/if}}
+
+    {{>comments-partials}}
+
+{{#if logged_in}}
+<script src="/js/blog.js"></script>
+{{/if}}
+      
