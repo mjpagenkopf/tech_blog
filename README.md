@@ -68,5 +68,8 @@ not applicable
 
 * Email: pagenkopf.edit@gmail.com
 
-*
+* Link to Repository: [Repository](https://github.com/mjpagenkopf/tech_blog)
 
+* Link to Heroku Live App: [Heroku App](https://pagenkopf-tech-blog.herokuapp.com/)
+
+* Link to my Heroku app info (if needed): [Heroku App Info](https://dashboard.heroku.com/apps/pagenkopf-tech-blog)
